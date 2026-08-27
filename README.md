@@ -1,6 +1,8 @@
 # SpotRoulette.io
 A friendly game to play with friends. Guess who hears which song. 
 
+Live site: https://fun1304.github.io/SpotRoulette.io/
+
 ## Run it
 
 Open `index.html` in a browser. The included demo room is playable immediately.

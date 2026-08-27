@@ -1,43 +1,15 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f3ed" />
-    <title>SpotRoulette | Guess the listener</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <header class="topbar">
-        <a class="brand" href="#top" aria-label="SpotRoulette home"><span class="brand-mark">S</span><span>SpotRoulette<span class="brand-dot">.</span></span></a>
-        <div class="room-pill"><span class="live-dot"></span><span>ROOM</span><strong id="roomCode">JAM-42</strong><button class="icon-button" id="copyRoom" title="Copy room code" aria-label="Copy room code">⌗</button></div>
-        <button class="text-button" id="leaveRoom">Leave room</button>
-      </header>
-      <main id="top">
-        <section class="intro-section">
-          <div class="eyebrow"><span class="eyebrow-line"></span> A social listening game</div>
-          <h1>Who <em>actually</em><br />listens to this?</h1>
-          <p class="intro-copy">One song. Four friends. Zero cheating.<br />Put your music taste on the line.</p>
-          <div class="hero-actions"><button class="primary-button" id="startGame">Start the game <span>↗</span></button><button class="secondary-button" id="howToPlay">How to play</button></div>
-        </section>
-        <section class="game-section" aria-label="SpotRoulette game">
-          <div class="section-heading"><div><span class="section-kicker">THE LOBBY</span><h2>Players in the room <span class="player-count" id="playerCount">4</span></h2></div><div class="lobby-actions"><button class="connect-button" id="connectSpotify"><span>●</span> Connect Spotify</button><button class="invite-button" id="inviteButton"><span>＋</span> Invite friends</button></div></div>
-          <div class="players-grid" id="playersGrid"></div>
-          <div class="game-panel" id="gamePanel">
-            <div class="panel-top"><span class="section-kicker">ROUND <span id="roundNumber">01</span> / 05</span><span class="status-label" id="statusLabel">Ready when you are</span></div>
-            <div class="track-stage"><div class="vinyl" aria-hidden="true"><div class="vinyl-hole"></div></div><div class="track-details"><span class="playing-label" id="playingLabel">THE MYSTERY TRACK</span><h3 id="trackTitle">Press start to spin the room</h3><p id="trackArtist">The song is hiding in plain sight.</p><div class="audio-row"><button class="play-button" id="playButton" aria-label="Play track">▶</button><div class="audio-bar"><span id="audioProgress"></span></div><span class="audio-time" id="audioTime">0:00</span></div></div></div>
-            <div class="guess-area"><div class="guess-heading"><span>Who listens to this?</span><small id="guessHint">Choose a player to lock in your guess</small></div><div class="guess-grid" id="guessGrid"></div></div>
-          </div>
-        </section>
-        <aside class="how-panel" id="howPanel"><button class="close-button" id="closeHow" aria-label="Close instructions">×</button><span class="section-kicker">THREE EASY STEPS</span><div class="steps"><div><b>01</b><strong>Connect</strong><p>Everyone joins the room with Spotify.</p></div><div><b>02</b><strong>Listen</strong><p>We pull a favorite from one player's taste.</p></div><div><b>03</b><strong>Guess</strong><p>Pick who you think the song belongs to.</p></div></div></aside>
-      </main>
-      <footer><span>Made for music people</span><span class="footer-note">Spotify data stays private to this room <span>✦</span></span></footer>
-    </div>
-    <div class="toast" id="toast" role="status"></div>
-    <script src="app.js"></script>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#18211f"><title>SpotRoulette | Guess the listener</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="game-shell"><header class="game-hud"><a class="brand" href="#" aria-label="SpotRoulette"><span class="brand-mark">S</span><span>SPOT<span>ROULETTE</span></span></a><div class="hud-center"><span class="room-label">ROOM</span><strong id="roomCode">JAM-42</strong><button id="copyRoom" title="Copy room code" aria-label="Copy room code">⌗</button></div><div class="score-box"><span>SCORE</span><strong id="score">000</strong></div></header>
+<main>
+<section class="screen start-screen" id="startScreen"><div class="game-badge">✦ MUSIC TRIVIA FOR FRIENDS</div><div class="roulette-logo"><span>WHO</span><b>LISTENS</b><span>TO THIS?</span></div><p class="tagline">Guess the player behind the song.<br>Trust your gut. Blame your friends.</p><div class="start-actions"><button class="primary-button" id="startGame">PLAY ROOM <span>▶</span></button><button class="text-button" id="howToPlay">HOW TO PLAY</button></div><div class="party-status"><span class="live-dot"></span><span id="playerCount">4</span> PLAYERS READY <span class="slash">/</span> ROOM <b>JAM-42</b></div><button class="connect-button" id="connectSpotify"><span>●</span> Connect Spotify account</button></section>
+<section class="screen round-screen hidden" id="roundScreen"><div class="round-meta"><span>ROUND <b id="roundNumber">01</b> / 05</span><span class="turn-label" id="statusLabel">YOUR TURN TO GUESS</span></div><div class="timer-wrap"><div class="timer" id="timer">15</div></div><div class="mystery-copy"><span class="section-kicker">MYSTERY TRACK</span><h1 id="trackTitle">Press play to begin</h1><p id="trackArtist">A song from someone's rotation</p><button class="play-button" id="playButton" aria-label="Play mystery track">▶</button></div><div class="guess-heading"><span>WHO LISTENS TO THIS?</span><small id="guessHint">Pick a player before time runs out</small></div><div class="guess-grid" id="guessGrid"></div><button class="skip-button" id="skipRound">Skip round <span>→</span></button></section>
+<section class="screen result-screen hidden" id="resultScreen"><span class="section-kicker">GAME COMPLETE</span><div class="result-icon">✦</div><h1>Nice playing.</h1><p id="finalMessage">You know your friends better than you think.</p><div class="final-score"><span>FINAL SCORE</span><strong id="finalScore">000</strong><small>/ 5 correct</small></div><button class="primary-button" id="playAgain">PLAY AGAIN <span>↻</span></button></section>
+</main><footer><span>SPOTROULETTE <b>v.01</b></span><button id="leaveRoom">LEAVE ROOM</button></footer></div>
+<aside class="how-panel" id="howPanel"><button class="close-button" id="closeHow" aria-label="Close instructions">×</button><span class="section-kicker">HOW TO PLAY</span><div class="steps"><div><b>01</b><strong>Listen close</strong><p>A mystery song comes from one player's Spotify taste.</p></div><div><b>02</b><strong>Pick a friend</strong><p>You have 15 seconds to make your call.</p></div><div><b>03</b><strong>Stack points</strong><p>Five rounds. One point for every correct guess.</p></div></div></aside><div class="toast" id="toast" role="status"></div><script src="app.js"></script>
+</body></html>

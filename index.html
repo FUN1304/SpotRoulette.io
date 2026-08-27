@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f3ed" />
+    <title>SpotRoulette | Guess the listener</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="SpotRoulette home"><span class="brand-mark">S</span><span>SpotRoulette<span class="brand-dot">.</span></span></a>
+        <div class="room-pill"><span class="live-dot"></span><span>ROOM</span><strong id="roomCode">JAM-42</strong><button class="icon-button" id="copyRoom" title="Copy room code" aria-label="Copy room code">⌗</button></div>
+        <button class="text-button" id="leaveRoom">Leave room</button>
+      </header>
+      <main id="top">
+        <section class="intro-section">
+          <div class="eyebrow"><span class="eyebrow-line"></span> A social listening game</div>
+          <h1>Who <em>actually</em><br />listens to this?</h1>
+          <p class="intro-copy">One song. Four friends. Zero cheating.<br />Put your music taste on the line.</p>
+          <div class="hero-actions"><button class="primary-button" id="startGame">Start the game <span>↗</span></button><button class="secondary-button" id="howToPlay">How to play</button></div>
+        </section>
+        <section class="game-section" aria-label="SpotRoulette game">
+          <div class="section-heading"><div><span class="section-kicker">THE LOBBY</span><h2>Players in the room <span class="player-count" id="playerCount">4</span></h2></div><div class="lobby-actions"><button class="connect-button" id="connectSpotify"><span>●</span> Connect Spotify</button><button class="invite-button" id="inviteButton"><span>＋</span> Invite friends</button></div></div>
+          <div class="players-grid" id="playersGrid"></div>
+          <div class="game-panel" id="gamePanel">
+            <div class="panel-top"><span class="section-kicker">ROUND <span id="roundNumber">01</span> / 05</span><span class="status-label" id="statusLabel">Ready when you are</span></div>
+            <div class="track-stage"><div class="vinyl" aria-hidden="true"><div class="vinyl-hole"></div></div><div class="track-details"><span class="playing-label" id="playingLabel">THE MYSTERY TRACK</span><h3 id="trackTitle">Press start to spin the room</h3><p id="trackArtist">The song is hiding in plain sight.</p><div class="audio-row"><button class="play-button" id="playButton" aria-label="Play track">▶</button><div class="audio-bar"><span id="audioProgress"></span></div><span class="audio-time" id="audioTime">0:00</span></div></div></div>
+            <div class="guess-area"><div class="guess-heading"><span>Who listens to this?</span><small id="guessHint">Choose a player to lock in your guess</small></div><div class="guess-grid" id="guessGrid"></div></div>
+          </div>
+        </section>
+        <aside class="how-panel" id="howPanel"><button class="close-button" id="closeHow" aria-label="Close instructions">×</button><span class="section-kicker">THREE EASY STEPS</span><div class="steps"><div><b>01</b><strong>Connect</strong><p>Everyone joins the room with Spotify.</p></div><div><b>02</b><strong>Listen</strong><p>We pull a favorite from one player's taste.</p></div><div><b>03</b><strong>Guess</strong><p>Pick who you think the song belongs to.</p></div></div></aside>
+      </main>
+      <footer><span>Made for music people</span><span class="footer-note">Spotify data stays private to this room <span>✦</span></span></footer>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

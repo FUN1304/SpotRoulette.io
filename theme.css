@@ -1,0 +1,26 @@
+:root {
+  --bg: #050806;
+  --panel: #101712;
+  --ink: #f4f8f4;
+  --muted: #8a9d91;
+  --mint: #1ed760;
+  --coral: #1ed760;
+  --line: #26392d;
+  --gold: #1ed760;
+}
+
+body { background: #050806; }
+.game-shell { background: radial-gradient(circle at 50% 42%, #102619 0, #050806 48%); }
+.brand-mark, .primary-button { background: #1ed760; color: #050806; }
+.brand > span:last-child span, .game-badge, .section-kicker, .connect-button, .roulette-logo span:last-child { color: #1ed760; }
+.roulette-logo span:first-child { color: #78f0a1; }
+.primary-button { box-shadow: 4px 4px 0 #0b7534; }
+.live-dot { background: #1ed760; box-shadow: 0 0 0 4px #173b24; }
+.score-box strong { color: #1ed760; }
+.connect-button { border: 1px solid #1ed760; padding: 12px 16px; background: #07150b; }
+.track-stage { background: #0c1e12; }
+.vinyl:after { background: #1ed760; }
+.play-button { background: #1ed760; color: #050806; }
+.guess-button:hover, .guess-button.selected { border-color: #1ed760; background: #0f2817; }
+.how-panel { box-shadow: 8px 8px 0 #1ed760; }
+.toast { background: #1ed760; color: #050806; }
